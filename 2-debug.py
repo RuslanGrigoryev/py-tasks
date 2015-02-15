@@ -1,7 +1,7 @@
 import sys
 
-x = int(sys.argv[1])
-y = int(sys.argv[2])
+x = 123456
+y = 321654
 gCounter = 0
 SIncrement = 0
 fIncrement = 0
@@ -30,8 +30,7 @@ def getSum(num):
         sum = sum + int(i)
     return sum
 
-#make always 3-digit num
-def removeFirstNums(num):
+def removeFirstNum(num):
     if(num > 999 and num <= 9999):
         num = str(num)
         return int(num[1:])
@@ -56,12 +55,13 @@ else:
         fHalf = int(makeStringWithNull(min(x, y))[0:3]) + fIncrement
         sHalf = int(makeStringWithNull(min(x, y))[3:]) + SIncrement
         if(sHalf>999):
-            sHalf = removeFirstNums(sHalf)
+            sHalf = removeFirstNum(sHalf)
         # if we found that lucky num SIncrement counter
         if (getSum(fHalf) == getSum(sHalf)):
             gCounter = gCounter + 1
         # gradually increase second half of number for 1 and if it is over 999 SIncrement firstHalf by 1
         # for example if we have 223999, next num in cycle will be 224000
+        # need to make sHalf null after this IF!!!!!!!!!!
 
         if (sHalf == 999):
             fIncrement = fIncrement + 1
