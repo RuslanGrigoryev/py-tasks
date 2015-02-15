@@ -46,10 +46,7 @@ for i in range( max(x,y) - min(x,y) ):
 
 
 	# need to make sHalf null after this IF!!!!!!!!!!
-	
-
-
-
+		
 	if (sHalf == 999):
 		fIncrement = fIncrement + 1
 		SIncrement = 0
